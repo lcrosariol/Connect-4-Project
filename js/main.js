@@ -39,4 +39,5 @@
      *         4 positions instead of 3 and ===4 instead of 3;
      *         also look for a tie if ===42(spots on board and no win)
      *        -if board includes null return null 
+     *        -if i decide to use the other board method
      *        -**/
