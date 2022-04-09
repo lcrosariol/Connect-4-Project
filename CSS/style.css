@@ -1,0 +1,70 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+#displayMessage {
+    text-align: center;
+}
+
+#topButtons {
+    width: 80vmin;
+
+}
+/** Need to make buttons more responsive  **/
+.top {
+    margin-bottom: 2vmin;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    border: .5vmin solid black;
+    height: 8vmin;
+    width: 8vmin;
+    gap: 2vmin;
+    margin-left: 1.3vmin;
+    margin-right: 1.3vmin;
+}
+
+#gameBoard {
+    display: grid;
+    background: red;
+    grid-template-rows: repeat(6, 10vmin);
+    grid-template-columns: repeat(7, 10vmin);
+    gap: 1vmin;
+    height: 66vmin;
+    width: 80vmin;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+#gameBoard > div {
+    margin-top: .8vmin;
+    border-radius: 50%;
+    border: .4vmin solid black;
+    background-color: blue;
+    align-content: center;
+    height: 8vmin;
+    width: 8vmin;
+}
+
+#reset {
+    margin-top: 20px;
+}
+
+p {
+    text-align: left;
+}
