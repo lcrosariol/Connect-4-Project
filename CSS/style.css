@@ -26,7 +26,8 @@ h2 {
     width: 80vmin;
 
 }
-/** Need to make buttons more responsive  **/
+/** Need to make buttons more responsive 
+    Annimate.CSS slideInDown would be awesome **/
 .top {
     margin-bottom: 2vmin;
     background-color: #4CAF50;
@@ -41,7 +42,7 @@ h2 {
 
 #gameBoard {
     display: grid;
-    background: red;
+    background: yellow;
     grid-template-rows: repeat(6, 10vmin);
     grid-template-columns: repeat(7, 10vmin);
     gap: 1vmin;
@@ -67,4 +68,20 @@ h2 {
 
 p {
     text-align: left;
+}
+
+.triangle1 {
+    width: 0;
+    height: 0;
+    border-bottom: 10vmin solid yellow;
+    border-left: 10vmin solid transparent;
+    margin-right: 10vmin;
+}
+
+.triangle1 {
+    width: 0;
+    height: 0;
+    border-bottom: 10vmin solid yellow;
+    border-right: 10vmin solid transparent;
+    margin-left: 10vmin;
 }
