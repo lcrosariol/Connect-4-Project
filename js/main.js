@@ -15,6 +15,9 @@ const colors = {
     '0': "white"
 }
 
+
+
+
 const winCombinations = [
     [0, 1, 2, 3],
     [41, 40, 39, 38],
@@ -96,6 +99,7 @@ const winCombinations = [
 let board;
 let winner;
 let totalTurns = 0;
+let currentPlayer = 1;
 /** CACHED ELEMENT REFERENCES **/
     /** Will need: 
      *      -buttons for top of game
@@ -105,6 +109,8 @@ let totalTurns = 0;
     **/
 const squares = document.querySelectorAll("#gameboard")
 const resetButton = document.getElementById("resetButton")
+const playEl = [...document.querySelectorAll("gameboard > div")];
+const displayMessage = document.querySelector("#displayMessage")
 
 
 /** EVENT LISTENERS **/
@@ -152,25 +158,41 @@ function initialization(){
     };
 
 function render(){
-    /** Iterates over each column in the board. **/
+//     /** Iterates over each column in the board. **/
     board.forEach(column, columnIndex); {
-        /** Iterates over each cell in the column. **/
+//         /** Iterates over each cell in the column. **/
         column.forEach(cell, cellIndex); {
-            /** Targets the specific cell by using the index of both column and cell. **/
+//             /** Targets the specific cell by using the index of both column and cell. **/
             let div = document.getElementById(`c${columnIndex}r${cellIndex}`);
-            /** Applies a background style to the cell from colors listed in constants. **/
+//             /** Applies a background style to the cell from colors listed in constants. **/
             div.style.backgroundColor = colors[cell];
         };
-    /** If column is full make the button above the column invisible (If it includes a 0 (white square), it is visible, if not it is hidden.)**/
+//     /** If column is full make the button above the column invisible (If it includes a 0 (white square), it is visible, if not it is hidden.)**/
     playButtons[columnIndex].style.visibility = column.includes(0) ? "visible" : "hidden";
     };
-    /** Adds to total turns because when we reach 42, the board is full. **/
+//     /** Adds to total turns because when we reach 42, the board is full. **/
     totalTurns++;
+
+    if(winner === "T"){
+        
+    }
     resetGame();
 };
 
-function playerTakesTurn(){
-
+function playerTakesTurn(evt){
+    const  colIdx = playEl.indexOf(evt.target);
+    if (colIdx === -1 || winner) return;
+    const colArr = board[colIdx];
+    const rowIdx = colArr.indexOf(0);
+    if (rowIdx === -1)return;
+    colArr[rowIdx] = currentPlayer;
+    currentPlayer *= -1;
+    winner = checkForWin();
+    render();
+    
+    if (winner === 'T'){
+        
+    }
 };
 
 function checkForWin(){
@@ -188,6 +210,7 @@ function checkForWin(){
         )
         {
             winner = 1;
+            displayMessage.innerHTML = "Red Wins!"
         }
 
         if (
@@ -198,11 +221,29 @@ function checkForWin(){
         )
         {
             winner = -1;
+            displayMessage.innerHTML = "Yellow Wins!"
         }
     }
     return winner;
 };
 
+
+// for (let i = 0; i < squares.length; i++) {
+//     squares[i].onclick = () => {
+//         alert("clicked" + i);
+//         if (squares[i+7].style.backgroundColor !== "white"){
+//             if  (currentPlayer == 1){
+//                 squares[i].style.backgroundColor("red")
+//                 currentPlayer == 2
+//                 displayMessage.innerHTML = currentPlayer
+//             }else if (currentPlayer == 2){
+//                 squares[i].style.backgroundColor("yellow")
+//                 currentPlayer == 2
+//                 displayMessage.innerHTML = currentPlayer
+//             } 
+//         } 
+//     }
+// }
 function resetGame(){
     if (winner) {
         resetButton.innerText = "Reset Game?";
