@@ -24,25 +24,28 @@ h2 {
 
 #topButtons {
     width: 80vmin;
-
 }
 /** Need to make buttons more responsive 
     Annimate.CSS slideInDown would be awesome **/
 .top {
     margin-bottom: 2vmin;
-    background-color: #4CAF50;
-    border-radius: 50%;
-    border: .5vmin solid black;
+
+    background-color: transparent;
+    border: none;
     height: 8vmin;
     width: 8vmin;
     gap: 2vmin;
     margin-left: 1.3vmin;
     margin-right: 1.3vmin;
 }
+/* .top:hover {
+    filter: invert(100%);
+
+} */
 
 #gameBoard {
     display: grid;
-    background: yellow;
+    background: blue;
     grid-template-rows: repeat(6, 10vmin);
     grid-template-columns: repeat(7, 10vmin);
     gap: 1vmin;
@@ -56,13 +59,13 @@ h2 {
     margin-top: .8vmin;
     border-radius: 50%;
     border: .4vmin solid black;
-    background-color: blue;
+    background-color: white;
     align-content: center;
     height: 8vmin;
     width: 8vmin;
 }
 
-#reset {
+#resetButton {
     margin-top: 20px;
 }
 
@@ -70,18 +73,29 @@ p {
     text-align: left;
 }
 
-.triangle1 {
+/* .triangle1 {
+    z-index: -1;
     width: 0;
     height: 0;
-    border-bottom: 10vmin solid yellow;
+    margin-left: -90vmin;
+    border-bottom: 10vmin solid orange;
     border-left: 10vmin solid transparent;
-    margin-right: 10vmin;
-}
+} */
 
 .triangle1 {
+    z-index: -1;
     width: 0;
     height: 0;
-    border-bottom: 10vmin solid yellow;
+    margin-right: -90vmin;
+    border-bottom: 13vmin solid blue;
     border-right: 10vmin solid transparent;
-    margin-left: 10vmin;
+
+}
+.triangle2{
+    z-index: -1;
+    width: 0;
+    height: 0;
+    margin-right: 90vmin;
+    border-bottom: 13vmin solid blue;
+    border-left: 10vmin solid transparent;
 }
