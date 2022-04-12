@@ -24,12 +24,14 @@ h2 {
 
 #topButtons {
     width: 80vmin;
+    grid-template-rows: 10vmin;
+    grid-template-columns: repeat(7, 10vmin);
 }
+
 /** Need to make buttons more responsive 
     Annimate.CSS slideInDown would be awesome **/
 .top {
     margin-bottom: 2vmin;
-
     background-color: transparent;
     border: none;
     height: 8vmin;
@@ -38,10 +40,12 @@ h2 {
     margin-left: 1.3vmin;
     margin-right: 1.3vmin;
 }
-/* .top:hover {
-    filter: invert(100%);
 
-} */
+
+.top:hover {
+    opacity: 0.0;
+
+}
 
 #gameBoard {
     display: grid;
@@ -51,21 +55,22 @@ h2 {
     gap: 1vmin;
     height: 66vmin;
     width: 80vmin;
-    justify-content: center;
+    justify-content: space-evenly;
     border-radius: 5px;
 }
 
 #gameBoard > div {
+    display: grid;
+    background-color: white;
     margin-top: .8vmin;
     border-radius: 50%;
     border: .4vmin solid black;
-    background-color: white;
     align-content: center;
     height: 8vmin;
-    width: 8vmin;
+    width: 9vmin;
 }
 
-#resetButton {
+#resetGame {
     margin-top: 20px;
 }
 

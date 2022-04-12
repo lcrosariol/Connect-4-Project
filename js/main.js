@@ -90,27 +90,16 @@ const winCombinations = [
     [13, 20, 27, 34],
 ]
 
-/** VARIABLES **/
-    /** Will probably need: 
-     *      -board
-     *      -player turns
-     *      -winner
-     **/
 let board;
+let currentPlayer;
 let winner;
-let totalTurns = 0;
-let currentPlayer = 1;
-/** CACHED ELEMENT REFERENCES **/
-    /** Will need: 
-     *      -buttons for top of game
-     *      -replay button
-     *      -winner display
-     *      -load squares on html to js (td or div)
-    **/
-const squares = document.querySelectorAll("#gameboard")
-const resetButton = document.getElementById("resetButton")
-const playEl = [...document.querySelectorAll("gameboard > div")];
-const displayMessage = document.querySelector("#displayMessage")
+let totalTurns;
+
+// const colBtns = [...document.querySelectorAll("#topButtons > button")];
+// const squares = document.querySelectorAll("#gameboard")
+const resetButton = document.getElementById("resetGame")
+const headerEl = document.querySelector("#displayMessage")
+const squares = document.querySelectorAll("#gameBoard")
 
 
 /** EVENT LISTENERS **/
@@ -119,8 +108,8 @@ const displayMessage = document.querySelector("#displayMessage")
      *       -replay click
     **/
 
-document.getElementById("topButtons").addEventListener("click", playerTakesTurn);
-document.getElementById("resetButton").addEventListener("click", initialization);
+document.getElementById("topButtons").addEventListener("click", choices);
+document.getElementById("resetGame").addEventListener("click", init);
 
 
 /** FUNCTIONS **/
@@ -140,128 +129,58 @@ document.getElementById("resetButton").addEventListener("click", initialization)
      *        
      *        -**/
 
-initialization();
 
-function initialization(){
-    board = [
-        [0, 0, 0, 0, 0, 0],  // Column 0
-        [0, 0, 0, 0, 0, 0],  // Column 1
-        [0, 0, 0, 0, 0, 0],  // Column 2
-        [0, 0, 0, 0, 0, 0],  // Column 3
-        [0, 0, 0, 0, 0, 0],  // Column 4
-        [0, 0, 0, 0, 0, 0],  // Column 5
-        [0, 0, 0, 0, 0, 0],  // Column 6
-    ];
+init();
+
+function init() {
+    board = new Array(42).fill(null);
+    currentPlayer = 1;
     totalTurns = 0;
     winner = null;
     render();
-    };
+};
 
-function render(){
+
+
+
+
+function render() {
 //     /** Iterates over each column in the board. **/
-    board.forEach(column, columnIndex); {
-//         /** Iterates over each cell in the column. **/
-        column.forEach(cell, cellIndex); {
-//             /** Targets the specific cell by using the index of both column and cell. **/
-            let div = document.getElementById(`c${columnIndex}r${cellIndex}`);
-//             /** Applies a background style to the cell from colors listed in constants. **/
-            div.style.backgroundColor = colors[cell];
-        };
-//     /** If column is full make the button above the column invisible (If it includes a 0 (white square), it is visible, if not it is hidden.)**/
-    playButtons[columnIndex].style.visibility = column.includes(0) ? "visible" : "hidden";
-    };
-//     /** Adds to total turns because when we reach 42, the board is full. **/
-    totalTurns++;
-
-    if(winner === "T"){
-        
-    }
-    resetGame();
-};
-
-function playerTakesTurn(evt){
-    const  colIdx = playEl.indexOf(evt.target);
-    if (colIdx === -1 || winner) return;
-    const colArr = board[colIdx];
-    const rowIdx = colArr.indexOf(0);
-    if (rowIdx === -1)return;
-    colArr[rowIdx] = currentPlayer;
-    currentPlayer *= -1;
-    winner = checkForWin();
-    render();
-    
-    if (winner === 'T'){
-        
-    }
-};
-
-function checkForWin(){
-    for (let w =0; w < winCombinations.length; w++){
-        const winCombinationsArrayArrayIndexZero = squares[winCombinations[w][0]]
-        const winCombinationsArrayArrayIndexOne = squares[winCombinations[w][1]]
-        const winCombinationsArrayArrayIndexTwo = squares[winCombinations[w][2]]
-        const winCombinationsArrayArrayIndexThree = squares[winCombinations[w][3]]
-
-        if (
-            winCombinationsArrayArrayIndexZero.style.backgroundColor === ("red") &&
-            winCombinationsArrayArrayIndexOne.style.backgroundColor === ("red") &&
-            winCombinationsArrayArrayIndexTwo.style.backgroundColor === ("red") &&
-            winCombinationsArrayArrayIndexThree.style.backgroundColor === ("red")
-        )
-        {
-            winner = 1;
-            displayMessage.innerHTML = "Red Wins!"
-        }
-
-        if (
-            winCombinationsArrayArrayIndexZero.style.backgroundColor === ("yellow") &&
-            winCombinationsArrayArrayIndexOne.style.backgroundColor === ("yellow") &&
-            winCombinationsArrayArrayIndexTwo.style.backgroundColor === ("yellow") &&
-            winCombinationsArrayArrayIndexThree.style.backgroundColor === ("yellow")
-        )
-        {
-            winner = -1;
-            displayMessage.innerHTML = "Yellow Wins!"
-        }
-    }
-    return winner;
-};
-
-
-// for (let i = 0; i < squares.length; i++) {
-//     squares[i].onclick = () => {
-//         alert("clicked" + i);
-//         if (squares[i+7].style.backgroundColor !== "white"){
-//             if  (currentPlayer == 1){
-//                 squares[i].style.backgroundColor("red")
-//                 currentPlayer == 2
-//                 displayMessage.innerHTML = currentPlayer
-//             }else if (currentPlayer == 2){
-//                 squares[i].style.backgroundColor("yellow")
-//                 currentPlayer == 2
-//                 displayMessage.innerHTML = currentPlayer
-//             } 
-//         } 
-//     }
-// }
-function resetGame(){
-    if (winner) {
-        resetButton.innerText = "Reset Game?";
-    }else{
-        resetButton.innerText = "Give up?";
+    board.forEach(function(sq, idx) {
+        squares[idx].innerHTML = lookup[sq];
+    });
+    if (winner === 'T') {
+        displayMessage.innerHTML = "It's a Tie!";
+    } else if (winner) {
+        displayMessage.innerHTML = `${winner=== 1 ? 'RED' : 'YELLOW'} is the Winner!`;
+    } else {
+        headerEl.innerHTML = `${currentPlayer === 1 ? 'RED' : 'YELLOW'}'s turn.`;
     }
 }
 
+function choices(evt) {
+    const idx = parseInt(evt.target.id.replace('sq', ''));
 
+    if (board[idx] = winner) return;
+    board[idx] = totalTurns;
+    totalTurns *= -1;
+    winner = getWinner();
+    render();
+}
 
+function getWinner() {
+    for (let i = 0; i < winCombinations.length; i++) {
+        const winCombinationsArrayArrayIndexZero = board[winCombinations[i][0]]
+        const winCombinationsArrayArrayIndexOne = board[winCombinations[i][1]]
+        const winCombinationsArrayArrayIndexTwo = board[winCombinations[i][2]]
+        const winCombinationsArrayArrayIndexThree = board[winCombinations[i][3]]
 
+        if (Math.abs(winCombinationsArrayArrayIndexZero[winCombinations[i][0]] + winCombinationsArrayArrayIndexOne[winCombinations[i][1]] + 
+            winCombinationsArrayArrayIndexTwo[winCombinations[i][2]] + winCombinationsArrayArrayIndexThree[winCombinations[i][3]]) === 4) 
+        return board[winCombinations[i][0]];//should give you a one or negative one 
 
-//Udacity donut example: 
+    if (board.includes(null)) return null;
+    return 'T';
+    }
+}
 
-
-//for (var row = 0; row < donutBox.length; row++) {
-//   // here, donutBox[row].length refers to the length of the donut array currently being looped over
-//   for (var column = 0; column < donutBox[row].length; column++) {
-//     console.log(donutBox[row][column]);
-//   }
-// }
