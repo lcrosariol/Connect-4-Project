@@ -138,9 +138,18 @@ function init() {
     totalTurns = 0;
     winner = null;
     render();
+    turn = 0;
 };
 
+function choices(evt) {
+    const idx = parseInt(evt.target.id.replace('sq', ''));
 
+    if (board[idx] || winner) return;
+    board[idx] = turn;
+    turns *= -1;
+    winner = getWinner();
+    render();
+}
 
 
 
@@ -158,15 +167,7 @@ function render() {
     }
 }
 
-function choices(evt) {
-    const idx = parseInt(evt.target.id.replace('sq', ''));
 
-    if (board[idx] = winner) return;
-    board[idx] = totalTurns;
-    totalTurns *= -1;
-    winner = getWinner();
-    render();
-}
 
 function getWinner() {
     for (let i = 0; i < winCombinations.length; i++) {
