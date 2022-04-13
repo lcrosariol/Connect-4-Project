@@ -1,30 +1,55 @@
 body {
+    background-color: #838282;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: white);
-
+    margin-top: 0;
 }
 
 h1 {
     text-align: center;
+    font-family: 'Monoton', cursive;
+    font-size: 10vmin;
+    animation: gradient 30s ease infinite; 
+    background-image: linear-gradient(
+        -225deg,
+        rgb(11, 109, 11) 0%,
+        rgb(9, 12, 187) 29%,
+        rgb(16, 116, 16) 67%,
+        rgb(4, 97, 43) 100%
+    );
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    background-size: 400% 400%;
+    margin: 0;
+    padding: 0;
 }
 
 h3 {
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 h2 {
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 #displayMessage {
     text-align: center;
+    font-size: 2vmin;
 }
 
 #topButtons {
-    width: 80vmin;
     grid-template-rows: 10vmin;
     grid-template-columns: repeat(7, 10vmin);
 }
@@ -33,15 +58,15 @@ h2 {
     Annimate.CSS slideInDown would be awesome **/
 .top {
     margin-bottom: 2vmin;
-    background-color: transparent;
     border: none;
     height: 8vmin;
     width: 8vmin;
     gap: 2vmin;
     margin-left: 1.3vmin;
     margin-right: 1.3vmin;
+    background-color: #838282;
+    font-size: 40px;
 }
-
 
 .top:hover {
     opacity: 0.0;
@@ -50,10 +75,6 @@ h2 {
 
 #gameBoard {
     display: grid;
-    background: linear-gradient(45deg, rgb(226, 74, 240), rgb(125, 23, 172), rgb(44, 222, 253), rgb(65, 1, 107), rgb(13, 13, 70), rgb(207, 43, 194));
-    animation-duration: 3s;
-    animation-name: slidein;
-    animation: 3s linear 1s infinite running slidein;
     grid-template-rows: repeat(6, 10vmin);
     grid-template-columns: repeat(7, 10vmin);
     gap: 1vmin;
@@ -62,62 +83,49 @@ h2 {
     justify-content: space-evenly;
     border-radius: 5px;
     border: 5px solid black;
+    animation: gradient 30s ease infinite; 
+    /* background: linear-gradient(45deg, rgb(226, 74, 240), rgb(125, 23, 172), rgb(44, 222, 253), rgb(65, 1, 107), rgb(13, 13, 70), rgb(207, 43, 194)); */
+    background: linear-gradient(45deg, rgb(11, 109, 11), rgb(135, 217, 238), rgb(7, 152, 236), rgb(16, 116, 16), rgb(4, 97, 43));
+    background-size: 400% 400%;
 }
 
-@keyframes slidein {
-    from {
-        margin-left: 100%;
-        width: 300%;
-    }
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+} 
 
-    to {
-        margin-left: 0%;
-        width: 100%;
-    }
-}
 
 #gameBoard > div {
     display: grid;
-    background-color: white;
     margin-top: .8vmin;
     border-radius: 50%;
-    border: .4vmin solid black;
+    border: .4vmin solid rgb(46, 46, 46);
     align-content: center;
     height: 8vmin;
     width: 9vmin;
 }
 
 #resetGame {
+    height: 5vmin;
+    width: 10vmin;
     margin-top: 20px;
+    border: 5px solid black;
+    border-radius: 5px;
+    /* background-color: rgb(8, 2, 99); */
+    color:rgb(48, 47, 47);
+    animation: gradient 30s ease infinite; 
+    /* background: linear-gradient(45deg, rgb(226, 74, 240), rgb(125, 23, 172), rgb(44, 222, 253), rgb(65, 1, 107), rgb(13, 13, 70), rgb(207, 43, 194)); */
+    background: linear-gradient(45deg, rgb(11, 109, 11), rgb(135, 217, 238), rgb(7, 152, 236), rgb(16, 116, 16), rgb(4, 97, 43));
+    background-size: 400% 400%;
 }
 
 p {
     text-align: left;
-}
-
-/* .triangle1 {
-    z-index: -1;
-    width: 0;
-    height: 0;
-    margin-left: -90vmin;
-    border-bottom: 10vmin solid orange;
-    border-left: 10vmin solid transparent;
-} */
-
-.triangle1 {
-    z-index: -1;
-    width: 0;
-    height: 0;
-    margin-right: -90vmin;
-    border-bottom: 13vmin solid blue;
-    border-right: 10vmin solid transparent;
-
-}
-.triangle2{
-    z-index: -1;
-    width: 0;
-    height: 0;
-    margin-right: 90vmin;
-    border-bottom: 13vmin solid blue;
-    border-left: 10vmin solid transparent;
 }

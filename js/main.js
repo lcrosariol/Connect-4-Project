@@ -1,3 +1,8 @@
+
+
+// IF THAT ONE DOESN"T WORK THIS DOES!!!!
+
+
 /** CONSTANTS **/
     /** Will need:
      *      -a colors object with keys for 2 players and 
@@ -12,94 +17,31 @@
 const colors = {
     '1': "red",
     '-1': "yellow",
-    '0': "white"
+    '0': "#838282"
 }
 
-
-
-
-const winCombinations = [
-    [0, 1, 2, 3],
-    [41, 40, 39, 38],
-    [7, 8, 9, 10],
-    [34, 33, 32, 31],
-    [14, 15, 16, 17],
-    [27, 26, 25, 24],
-    [21, 22, 23, 24],
-    [20, 19, 18, 17],
-    [28, 29, 30, 31],
-    [13, 12, 11, 10],
-    [35, 36, 37, 38],
-    [6, 5, 4, 3],
-    [0, 7, 14, 21],
-    [41, 34, 27, 20],
-    [1, 8, 15, 22],
-    [40, 33, 26, 19],
-    [2, 9, 16, 23],
-    [39, 32, 25, 18],
-    [3, 10, 17, 24],
-    [38, 31, 24, 17],
-    [4, 11, 18, 25],
-    [37, 30, 23, 16],
-    [5, 12, 19, 26],
-    [36, 29, 22, 15],
-    [6, 13, 20, 27],
-    [35, 28, 21, 14],
-    [0, 8, 16, 24],
-    [41, 33, 25, 17],
-    [7, 15, 23, 31],
-    [34, 26, 18, 10],
-    [14, 22, 30, 38],
-    [27, 19, 11, 3],
-    [35, 29, 23, 17],
-    [6, 12, 18, 24],
-    [28, 22, 16, 10],
-    [13, 19, 25, 31],
-    [21, 15, 9, 3],
-    [20, 26, 32, 38],
-    [36, 30, 24, 18],
-    [5, 11, 17, 23],
-    [37, 31, 25, 19],
-    [4, 10, 16, 22],
-    [2, 10, 18, 26],
-    [39, 31, 23, 15],
-    [1, 9, 17, 25],
-    [40, 32, 24, 16],
-    [9, 17, 25, 33],
-    [8, 16, 24, 32],
-    [11, 17, 23, 29],
-    [12, 18, 24, 30],
-    [1, 2, 3, 4],
-    [5, 4, 3, 2],
-    [8, 9, 10, 11],
-    [12, 11, 10, 9],
-    [15, 16, 17, 18],
-    [19, 18, 17, 16],
-    [22, 23, 24, 25],
-    [26, 25, 24, 23],
-    [29, 30, 31, 32],
-    [33, 32, 31, 30],
-    [36, 37, 38, 39],
-    [40, 39, 38, 37],
-    [7, 14, 21, 28],
-    [8, 15, 22, 29],
-    [9, 16, 23, 30],
-    [10, 17, 24, 31],
-    [11, 18, 25, 32],
-    [12, 19, 26, 33],
-    [13, 20, 27, 34],
-]
-
+/** VARIABLES **/
+    /** Will probably need: 
+     *      -board
+     *      -player turns
+     *      -winner
+     **/
 let board;
 let currentPlayer;
 let winner;
 let totalTurns;
 
-// const colBtns = [...document.querySelectorAll("#topButtons > button")];
+/** CACHED ELEMENT REFERENCES **/
+    /** Will need: 
+     *      -buttons for top of game
+     *      -replay button
+     *      -winner display
+     *      -load squares on html to js (td or div)
+    **/
+const colBtns = [...document.querySelectorAll("#topButtons > button")];
 // const squares = document.querySelectorAll("#gameboard")
 const resetButton = document.getElementById("resetGame")
 const headerEl = document.querySelector("#displayMessage")
-const squares = document.querySelectorAll("#gameBoard")
 
 
 /** EVENT LISTENERS **/
@@ -108,8 +50,9 @@ const squares = document.querySelectorAll("#gameBoard")
      *       -replay click
     **/
 
-document.getElementById("topButtons").addEventListener("click", choices);
+document.getElementById("topButtons").addEventListener("click", playerTakesTurn);
 document.getElementById("resetGame").addEventListener("click", init);
+// document.querySelector(".top").addEventListener("click", playerTakesTurn);
 
 
 /** FUNCTIONS **/
@@ -133,55 +76,111 @@ document.getElementById("resetGame").addEventListener("click", init);
 init();
 
 function init() {
-    board = new Array(42).fill(null);
+    board = [
+        [0, 0, 0, 0, 0, 0],  // Column 0
+        [0, 0, 0, 0, 0, 0],  // Column 1
+        [0, 0, 0, 0, 0, 0],  // Column 2
+        [0, 0, 0, 0, 0, 0],  // Column 3
+        [0, 0, 0, 0, 0, 0],  // Column 4
+        [0, 0, 0, 0, 0, 0],  // Column 5
+        [0, 0, 0, 0, 0, 0],  // Column 6
+    ];
     currentPlayer = 1;
     totalTurns = 0;
     winner = null;
     render();
-    turn = 0;
-};
-
-function choices(evt) {
-    const idx = parseInt(evt.target.id.replace('sq', ''));
-
-    if (board[idx] || winner) return;
-    board[idx] = turn;
-    turns *= -1;
-    winner = getWinner();
-    render();
 }
-
-
 
 function render() {
 //     /** Iterates over each column in the board. **/
-    board.forEach(function(sq, idx) {
-        squares[idx].innerHTML = lookup[sq];
+    board.forEach((column, columnidx) => {
+//         /** Iterates over each cell in the column. **/
+        column.forEach((cell, cellidx) => {
+//             /** Targets the specific cell by using the index of both column and cell. **/
+            let div = document.getElementById(`c${columnidx}r${cellidx}`);
+//             /** Applies a background style to the cell from colors listed in constants. **/
+            div.style.backgroundColor = colors[cell];
+        });
+//     /** If column is full make the button above the column invisible (If it includes a 0 (white square), it is visible, if not it is hidden.)**/
+        colBtns[columnidx].style.visibility = column.includes(0) ? "visible" : "hidden";
     });
+//     /** Adds to total turns because when we reach 42, the board is full. **/
+    resetGame();
+    totalTurns++;
+}
+
+function playerTakesTurn(evt) {
+    const  colIdx = colBtns.indexOf(evt.target);
+    if (colIdx === -1 || winner) return;
+    const colArr = board[colIdx];
+    const rowIdx = colArr.indexOf(0);
+    if (rowIdx === -1) return;
+    colArr[rowIdx] = currentPlayer;
+    currentPlayer *= -1;
+    winner = checkForWin(colIdx, rowIdx);
+    render();
+    
     if (winner === 'T') {
-        displayMessage.innerHTML = "It's a Tie!";
+        displayMessage.innerText = "It's a Tie!";
     } else if (winner) {
-        displayMessage.innerHTML = `${winner=== 1 ? 'RED' : 'YELLOW'} is the Winner!`;
+        displayMessage.innerText = `${winner=== 1 ? 'RED' : 'YELLOW'} is the Winner!`;
     } else {
         headerEl.innerHTML = `${currentPlayer === 1 ? 'RED' : 'YELLOW'}'s turn.`;
     }
 }
 
+function checkForWin() {
+    if (totalTurns >= 42) {return winner = "T"};
+    for (let colIdx = 0; colIdx <= 6; colIdx++) {
+        winner = checkCol(colIdx);
+        if (winner) break;
+    }
+    return winner; 
+}
 
+function checkCol(colIdx) {
+    const colArr = board[colIdx];
+    for (let rowIdx = 0; rowIdx < colArr.length; rowIdx++) {
+        let winner = checkVert(colArr, rowIdx) || checkHori(colIdx, rowIdx) ||
+            checkDiag(colIdx, rowIdx, 1) || checkDiag(colIdx, rowIdx, -1);
+        if (winner) return winner;
+    }
+    return null;
+}
 
-function getWinner() {
-    for (let i = 0; i < winCombinations.length; i++) {
-        const winCombinationsArrayArrayIndexZero = board[winCombinations[i][0]]
-        const winCombinationsArrayArrayIndexOne = board[winCombinations[i][1]]
-        const winCombinationsArrayArrayIndexTwo = board[winCombinations[i][2]]
-        const winCombinationsArrayArrayIndexThree = board[winCombinations[i][3]]
-
-        if (Math.abs(winCombinationsArrayArrayIndexZero[winCombinations[i][0]] + winCombinationsArrayArrayIndexOne[winCombinations[i][1]] + 
-            winCombinationsArrayArrayIndexTwo[winCombinations[i][2]] + winCombinationsArrayArrayIndexThree[winCombinations[i][3]]) === 4) 
-        return board[winCombinations[i][0]];//should give you a one or negative one 
-
-    if (board.includes(null)) return null;
-    return 'T';
+function checkDiag(colIdx, rowIdx, dir) {
+    if (dir > 0 && colIdx > 3 || dir > 0 && rowIdx > 2) return null;
+    if (dir < 0 && colIdx > 3 || dir < 0 && rowIdx < 3) return null;
+    if (Math.abs(board[colIdx][rowIdx] + board[colIdx + 1][rowIdx + dir] + board[colIdx + 2][rowIdx + dir * 2]+ board[colIdx + 3][rowIdx + dir * 3]) === 4) {
+        return board[colIdx][rowIdx];
+    } else {
+        return null;
     }
 }
 
+function checkHori(colIdx, rowIdx) {
+    if (colIdx > 3) return null;
+    if (Math.abs(board[colIdx][rowIdx] + board[colIdx + 1][rowIdx] + board[colIdx + 2][rowIdx] + board[colIdx + 3][rowIdx]) === 4) {
+        return board[colIdx][rowIdx];
+    } else {
+        return null;
+    }
+}
+
+
+function checkVert(colArr, rowIdx) {
+    if (rowIdx > 2) return null;
+    if (Math.abs(colArr[rowIdx] + colArr[rowIdx + 1] + colArr[rowIdx + 2] + colArr[rowIdx + 3]) === 4) {
+        return colArr[rowIdx];
+    } else {
+        return null;
+    }
+}
+
+function resetGame() {
+    if (winner) {
+        resetButton.innerText = "Reset Game?";
+    } else {
+        resetButton.innerText = "Give up?";
+    }
+}
