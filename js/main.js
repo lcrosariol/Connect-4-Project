@@ -82,7 +82,7 @@ function playerTakesTurn(evt) {
         headerEl.textContent = `${currentPlayer === 1 ? 'RED' : 'YELLOW'}'s turn.`;
     }
 }
-
+                                                                                                        //// where i left off
 function checkForWin() {
     if (totalTurns >= 42) { return winner = "T" };
     for (let colIdx = 0; colIdx <= 6; colIdx++) {

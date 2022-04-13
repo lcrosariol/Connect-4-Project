@@ -1,3 +1,36 @@
+/** CONSTANTS **/
+
+//  A colors object with
+//  keys for 2 players and a
+//  3rd  key with a value of 0; for the unused box on the grid.
+
+
+
+/** VARIABLES **/
+
+// -variable for the board
+// -variable for the current player
+// -variable for the winner
+// -variable for the total amount of turns
+
+/** CACHED ELEMENT REFERENCES **/
+
+//    Selects the first button with #topButtons as the parent element. Query selector all is array like but can't use array methods on buttons.
+//    Creates a constant (resetButton) for the button in the HTML that has an ID of resetGame.
+//    Creates a constant (headerEl) for the HTML element that has the ID of displayMessage.
+//    Creates a constant (player) for the HTML audio element.
+//    Creates a constant (drum) for the HTML ID drum.
+//    Sets the volume on the drum sound.
+//    Creates a constant (winnerSound) for the HTML ID winnner.
+//    Sets the volume on the win sound.
+
+/** EVENT LISTENERS **/
+
+//    Gets the HTML element #topButtons and adds an event listener on click of a mouse to run function playerTakesTurn.
+//    Gets the HTML element #resetGame and adds an event listener on click of a mouse to run function init.
+
+/** FUNCIONS **/
+
 // Calls initialization function.  Can be called before the function because of hoisting.
 
 // function init() {                                    Runs Initialization (init) function.
@@ -45,3 +78,4 @@
 // Else if we have a winner, play win sound and
 // display which player is the winner.
 // If there's not a tie or winner, display who's turn it is.   .textContent or .innerText work fine here.
+
