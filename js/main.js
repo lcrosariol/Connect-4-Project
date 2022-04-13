@@ -31,6 +31,51 @@ let currentPlayer;
 let winner;
 let totalTurns;
 
+
+
+// // Constants
+// const sounds = {
+//     laser: 'http://www.freesound.org/data/previews/42/42106_70164-lq.mp3',
+//     dog: 'http://www.freesound.org/data/previews/327/327666_5632380-lq.mp3',
+//     cow: 'http://www.freesound.org/data/previews/58/58277_634166-lq.mp3',
+//     siren: 'http://www.freesound.org/data/previews/336/336899_4939433-lq.mp3'
+// };
+
+// // Cached DOM Elements
+// const player = new Audio();
+// const bgPlayer = document.getElementById('bg-player');
+// const bgCheckbox = document.querySelector('input[type="checkbox"]');
+
+// // Adjust volume of background music to 50%
+// bgPlayer.volume = .3;
+
+// // Event Listeners
+// document.getElementById('play-btn').addEventListener('click', handlePlaySound);
+// bgCheckbox.addEventListener('change', handleBgChanged);
+
+// // Functions
+// function handlePlaySound() {
+//   // Use the CSS :checked pseudoclass to select the selected radio button
+//     const selSoundInp = document.querySelector('input[name="sound"]:checked');
+//     playSound(selSoundInp.value);
+// }
+
+// function playSound(name) {
+//     player.src = sounds[name];
+//     player.play();
+// }
+
+// function handleBgChanged() {
+//     bgCheckbox.checked ? bgPlayer.play() : bgPlayer.pause();
+// }
+
+
+
+
+
+
+
+
 /** CACHED ELEMENT REFERENCES **/
     /** Will need: 
      *      -buttons for top of game
@@ -38,11 +83,14 @@ let totalTurns;
      *      -winner display
      *      -load squares on html to js (td or div)
     **/
-const colBtns = [...document.querySelectorAll("#topButtons > button")];
+const colBtns = [...document.querySelectorAll("#topButtons > button")]; // selects the first button with 
+//#topButtons as the parent element
+console.log(colBtns);
+//query selector all is array like but can't use array methods on buttons
 // const squares = document.querySelectorAll("#gameboard")
 const resetButton = document.getElementById("resetGame")
 const headerEl = document.querySelector("#displayMessage")
-
+const player = new Audio();
 
 /** EVENT LISTENERS **/
     /** Will need: 

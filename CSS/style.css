@@ -2,7 +2,6 @@ body {
     background-color: #838282;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     margin-top: 0;
 }
@@ -47,7 +46,42 @@ h2 {
 #displayMessage {
     text-align: center;
     font-size: 2vmin;
+    /* animation: 2s anim-popoutin ease infinite; WORKS BUT IS KIND OF ANNOYING */
 }
+
+/* @keyframes anim-popoutin {                      WORKS BUT IS KIND OF ANNOYING
+    0% {
+        color: rgb(85, 20, 82);
+        transform: scale(0);
+        opacity: 0;
+        text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+        25% {
+        color: rgb(238, 38, 211);
+        transform: scale(2);
+        opacity: 1;
+        text-shadow: 3px 10px 5px rgba(0, 0, 0, 0.5);
+    }
+    50% {
+        color: rgb(85, 20, 82);
+        transform: scale(1);
+        opacity: 1;
+        text-shadow: 1px 0 0 rgba(0, 0, 0, 0);
+    }
+    100% {
+    /* animate nothing to add pause at the end of animation 
+        transform: scale(1);
+        opacity: 1;
+        text-shadow: 1px 0 0 rgba(0, 0, 0, 0);
+    }
+} */
+
+
+#bg-player {
+    margin-top: 2vmin;
+    width: 20vmin;
+}
+
 
 #topButtons {
     grid-template-rows: 10vmin;
@@ -114,8 +148,8 @@ h2 {
 
 #resetGame {
     height: 5vmin;
-    width: 10vmin;
-    margin-top: 20px;
+    width: 18vmin;
+    margin-top: 2vmin;
     border: 5px solid black;
     border-radius: 5px;
     /* background-color: rgb(8, 2, 99); */
@@ -126,6 +160,17 @@ h2 {
     background-size: 400% 400%;
 }
 
-p {
-    text-align: left;
+#last {
+    height: 5vmin;
+    width: 18vmin;
+    justify-content: right;
+    margin-top: 2vmin;
+    border: 5px solid black;
+    border-radius: 5px;        /* background-color: rgb(8, 2, 99); */
+    color:rgb(48, 47, 47);
+    animation: gradient 30s ease infinite;
+    /* background: linear-gradient(45deg, rgb(226, 74, 240), rgb(125, 23, 172), rgb(44, 222, 253), rgb(65, 1, 107), rgb(13, 13, 70), rgb(207, 43, 194)); */
+    background: linear-gradient(45deg, rgb(11, 109, 11), rgb(135, 217, 238), rgb(7, 152, 236), rgb(16, 116, 16), rgb(4, 97, 43));
+    background-size: 400% 400%;
+
 }
