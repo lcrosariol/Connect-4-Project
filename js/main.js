@@ -50,6 +50,7 @@ function init() {
     currentPlayer = 1;
     totalTurns = 0;
     winner = null;
+    document.getElementById("displayMessage").style.color = "#1B1B1B";
     render();
 }
 
@@ -85,9 +86,11 @@ function playerTakesTurn(evt) {
         if (winner === 1) {
             ++redWin;
             redEl.innerText = `${redWin}`;
+            document.getElementById("displayMessage").style.color = "#cc2900";
         } else if (winner === -1) {
             ++yellowWin;
             yellowEl.innerText = `${yellowWin}`;
+            document.getElementById("displayMessage").style.color = "#e6b800";
         }
     } else {
         headerEl.textContent = `${currentPlayer === 1 ? 'RED' : 'YELLOW'}'s turn.`;
