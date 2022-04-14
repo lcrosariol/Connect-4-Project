@@ -12,6 +12,8 @@
 // -variable for the current player
 // -variable for the winner
 // -variable for the total amount of turns
+// -variable for red win count
+// -variable for yellow win count
 
 /** CACHED ELEMENT REFERENCES **/
 
@@ -81,12 +83,21 @@
 
 
 
+// Add total to red win count.
 
 
-//Function checkHoriz
+// Add total to yellow win count.
 
 
 
+
+
+
+
+// Function checkHoriz passes the parameters colIdx and rowIdx
+// If the column index is greater than 3, then return null because a horizontal win cannot be made.
+// if the absolute value of the coordinates's value(assigned by player either 1 or -1) added up in 4 adjoining squares horizontally
+// to be 4 return to the board.  Otherwise return null. DISCUSS WITH MELANIE IF IT'S THE VALUE OF THE PIECE OR THE COORDINATES.  
 
 
 
@@ -152,7 +163,7 @@
 // Declares a constant colArr which is equal to the index of the button clicked in it's index on the board.
 // For loop that loops through rowIdx (which is the index of colArr(the index of the column of the button clicked on)), we start at index 0 and increment by one each loop until
 // we reach the length of colArr(index number of the column clicked on).
-
+// DISCUSS WITH MELANIE ABOUT THIS ONE  I don't understand the loop
 
 
 

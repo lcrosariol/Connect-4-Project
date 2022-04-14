@@ -89,8 +89,6 @@ h2 {
     grid-template-columns: repeat(7, 10vmin);
 }
 
-/** Need to make buttons more responsive 
-    Annimate.CSS slideInDown would be awesome **/
 .top {
     margin-bottom: 2vmin;
     border: none;
@@ -157,7 +155,6 @@ h2 {
     border: 5px solid black;
     border-radius: 5px;
     animation: gradient 30s ease infinite;
-    /* background: linear-gradient(45deg, rgb(226, 74, 240), rgb(125, 23, 172), rgb(44, 222, 253), rgb(65, 1, 107), rgb(13, 13, 70), rgb(207, 43, 194)); */
     background: linear-gradient(45deg, rgb(11, 109, 11), rgb(9, 12, 187), rgb(16, 116, 16), rgb(4, 97, 43));
     background-size: 400% 400%;
 }
@@ -171,7 +168,6 @@ h2 {
     border: 5px solid black;
     border-radius: 5px;
     animation: gradient 30s ease infinite;
-    /* background: linear-gradient(45deg, rgb(226, 74, 240), rgb(125, 23, 172), rgb(44, 222, 253), rgb(65, 1, 107), rgb(13, 13, 70), rgb(207, 43, 194)); */
     background: linear-gradient(45deg, rgb(11, 109, 11), rgb(9, 12, 187), rgb(16, 116, 16), rgb(4, 97, 43));
     background-size: 400% 400%;
 }
@@ -192,7 +188,13 @@ a:active {
     color: red;
 }
 
+.red {
 
+}
+
+.yellow {
+    
+}
 
 /** Code snippet from Nash Vail https://codepen.io/nashvail/pen/wpGgXO **/
 .ball {

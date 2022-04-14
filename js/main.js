@@ -12,6 +12,8 @@ let board;
 let currentPlayer;
 let winner;
 let totalTurns;
+let redWin = 0;
+let yellowWin = 0;
 
 /** CACHED ELEMENT REFERENCES **/
 
@@ -23,6 +25,8 @@ const drum = document.getElementById('drum');
 drum.volume = 0.3;
 const winnerSound = document.getElementById("winner");
 winnerSound.volume = 0.4;
+const redEl = document.querySelector(".red");
+const yellowEl = document.querySelector(".yellow");
 
 /** EVENT LISTENERS **/
 
@@ -65,7 +69,7 @@ function playerTakesTurn(evt) {
     const colIdx = colBtns.indexOf(evt.target);
     if (colIdx === -1 || winner) return false;
     const colArr = board[colIdx];
-    const rowIdx = colArr.indexOf(0);                                                               ////????? I am not sure I understand this correctly
+    const rowIdx = colArr.indexOf(0);
     if (rowIdx === -1) return false;
     colArr[rowIdx] = currentPlayer;
     currentPlayer *= -1;
@@ -78,6 +82,13 @@ function playerTakesTurn(evt) {
     } else if (winner) {
         winnerSound.play();
         displayMessage.textContent = `${winner === 1 ? 'RED' : 'YELLOW'} is the Winner!`;
+        if (winner === 1) {
+            ++redWin;
+            redEl.innerText = `${redWin}`;
+        } else if (winner === -1) {
+            ++yellowWin;
+            yellowEl.innerText = `${yellowWin}`;
+        }
     } else {
         headerEl.textContent = `${currentPlayer === 1 ? 'RED' : 'YELLOW'}'s turn.`;
     }
@@ -134,9 +145,8 @@ function checkDiag(colIdx, rowIdx) {
                 }
             }
         }
-    } {
-        return null;
-    }
+    } 
+    return null;   
 }
 
 function checkForWin() {
@@ -152,7 +162,7 @@ function checkCol(colIdx) {
     const colArr = board[colIdx];
     for (let rowIdx = 0; rowIdx < colArr.length; rowIdx++) {
         let winner = checkVert(colArr, rowIdx) || checkHori(colIdx, rowIdx) ||
-            checkDiag(colIdx, rowIdx, 1) || checkDiag(colIdx, rowIdx, -1);
+            checkDiag(colIdx, rowIdx);
         if (winner) return winner;
     }
     return null;
@@ -166,7 +176,10 @@ function resetGame() {
     }
 }
 
-/** Code snippet from Nash Vail https://codepen.io/nashvail/pen/wpGgXO **/
+/** Some code used from GA examples: https://github.com/jhotz2112/Connect_Four/blob/main/js/script.js 
+ * & https://github.com/countchrisdo/connect-four **/
+
+/** Background Code snippet from Nash Vail https://codepen.io/nashvail/pen/wpGgXO **/
 // Some random colors
 const colors = ["#3CC157", "#2AA7FF", "#1B1B1B", "#FCBC0F", "#F85F36"];
 
