@@ -29,12 +29,15 @@ h1 {
 }
 
 h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
 }
 
 h2 {
+    font-family: 'Plus Jakarta Sans',
+    sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
@@ -43,10 +46,11 @@ h2 {
 #displayMessage {
     text-align: center;
     font-size: 2vmin;
-    /* animation: 2s anim-popoutin ease infinite; WORKS BUT IS KIND OF ANNOYING */
 }
+    /* animation: 2s anim-popoutin ease infinite; //WORKS BUT IS KIND OF ANNOYING 
+} 
 
-/* @keyframes anim-popoutin {                      WORKS BUT IS KIND OF ANNOYING
+@keyframes anim-popoutin {                      //WORKS BUT IS KIND OF ANNOYING
     0% {
         color: rgb(85, 20, 82);
         transform: scale(0);
@@ -66,12 +70,12 @@ h2 {
         text-shadow: 1px 0 0 rgba(0, 0, 0, 0);
     }
     100% {
-    /* animate nothing to add pause at the end of animation 
+    animate nothing to add pause at the end of animation 
         transform: scale(1);
         opacity: 1;
         text-shadow: 1px 0 0 rgba(0, 0, 0, 0);
     }
-} */
+}  */
 
 
 #bg-player {
@@ -115,7 +119,6 @@ h2 {
     border-radius: 5px;
     border: 5px solid black;
     animation: gradient 30s ease infinite;
-    /* background: linear-gradient(45deg, rgb(226, 74, 240), rgb(125, 23, 172), rgb(44, 222, 253), rgb(65, 1, 107), rgb(13, 13, 70), rgb(207, 43, 194)); */
     background: linear-gradient(45deg, rgb(11, 109, 11), rgb(16, 116, 16), rgb(9, 12, 187), rgb(4, 97, 43));
     background-size: 400% 400%;
 }
@@ -146,13 +149,13 @@ h2 {
 }
 
 #resetGame {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color:#a09f9f;
     height: 5vmin;
     width: 18vmin;
     margin-top: 2vmin;
     border: 5px solid black;
     border-radius: 5px;
-    /* background-color: rgb(8, 2, 99); */
-    color: rgb(48, 47, 47);
     animation: gradient 30s ease infinite;
     /* background: linear-gradient(45deg, rgb(226, 74, 240), rgb(125, 23, 172), rgb(44, 222, 253), rgb(65, 1, 107), rgb(13, 13, 70), rgb(207, 43, 194)); */
     background: linear-gradient(45deg, rgb(11, 109, 11), rgb(9, 12, 187), rgb(16, 116, 16), rgb(4, 97, 43));
@@ -160,20 +163,36 @@ h2 {
 }
 
 #last {
+    font-family: 'Plus Jakarta Sans', sans-serif;
     height: 5vmin;
     width: 18vmin;
     justify-content: right;
     margin-top: 2vmin;
     border: 5px solid black;
     border-radius: 5px;
-    /* background-color: rgb(8, 2, 99); */
-    color: rgb(48, 47, 47);
     animation: gradient 30s ease infinite;
     /* background: linear-gradient(45deg, rgb(226, 74, 240), rgb(125, 23, 172), rgb(44, 222, 253), rgb(65, 1, 107), rgb(13, 13, 70), rgb(207, 43, 194)); */
     background: linear-gradient(45deg, rgb(11, 109, 11), rgb(9, 12, 187), rgb(16, 116, 16), rgb(4, 97, 43));
     background-size: 400% 400%;
-
 }
+
+a:link {
+    color: #a09f9f;
+}
+
+a:visited {
+    color: #a09f9f;
+}
+
+a:hover {
+    color: hotpink;
+}
+
+a:active {
+    color: red;
+}
+
+
 
 /** Code snippet from Nash Vail https://codepen.io/nashvail/pen/wpGgXO **/
 .ball {

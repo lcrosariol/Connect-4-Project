@@ -82,9 +82,73 @@ function playerTakesTurn(evt) {
         headerEl.textContent = `${currentPlayer === 1 ? 'RED' : 'YELLOW'}'s turn.`;
     }
 }
-                                                                                                        //// where i left off
+
+function checkHori(colIdx, rowIdx) {
+    if (colIdx > 3) return null;
+    if (Math.abs(board[colIdx][rowIdx] + board[colIdx + 1][rowIdx] + board[colIdx + 2][rowIdx] + board[colIdx + 3][rowIdx]) === 4) {
+        return board[colIdx][rowIdx];
+    } else {
+        return null;
+    }
+}
+
+function checkVert(colArr, rowIdx) {
+    if (rowIdx > 2) return null;
+    if (Math.abs(colArr[rowIdx] + colArr[rowIdx + 1] + colArr[rowIdx + 2] + colArr[rowIdx + 3]) === 4) {
+        return colArr[rowIdx];
+    } else {
+        return null;
+    }
+}
+
+// function checkDiag(colIdx, rowIdx, x) {
+//     if (x > 0 && colIdx > 3 || x > 0 && rowIdx > 2) return null;
+//     if (x < 0 && colIdx > 3 || x < 0 && rowIdx < 3) return null;
+//     if (Math.abs(board[colIdx][rowIdx] + board[colIdx + 1][rowIdx + x] + board[colIdx + 2][rowIdx + x * 2] + board[colIdx + 3][rowIdx + x * 3]) === 4) {
+//         return board[colIdx][rowIdx];
+//     } else {
+//         return null;
+//     }
+// }
+
+function checkDiag(colIdx, rowIdx) {
+    for (var rowIdx = 0; rowIdx < 3; rowIdx++) {
+        for (var colIdx = 0; colIdx < 4; colIdx++) {
+            if (Math.abs(board[colIdx][rowIdx] + board[colIdx + 1][rowIdx + 1] + board[colIdx + 2][rowIdx + 2] + board[colIdx + 3][rowIdx + 3])===4) {
+                return board[colIdx][rowIdx];
+            } else {
+                for (var rowIdx = 5; rowIdx > 2; rowIdx--) {
+                    for (var colIdx = 6; colIdx > 2; colIdx--) {            
+                        } if (Math.abs(board[colIdx][rowIdx] + board[colIdx - 1][rowIdx - 1] + board[colIdx - 2][rowIdx - 2] + board[colIdx - 3][rowIdx - 3])=== 4) {
+                            return board[colIdx][rowIdx];   
+                        } else {
+                            for (var rowIdx = 5; rowIdx > 2; rowIdx--) {
+                                for (var colIdx = 0; colIdx < 4; colIdx++) {
+                                    } if (Math.abs(board[colIdx][rowIdx] + board[colIdx + 1][rowIdx - 1] + board[colIdx + 2][rowIdx - 2] + board[colIdx + 3][rowIdx - 3])=== 4) {   
+                                        return board[colIdx][rowIdx];   
+                                    } else {
+                                        for (var rowIdx = 0; rowIdx < 3; rowIdx++) {
+                                            for (var colIdx = 6; colIdx > 2; colIdx--) {
+                                                } if (Math.abs(board[colIdx][rowIdx] + board[colIdx - 1][rowIdx + 1] + board[colIdx - 2][rowIdx + 2] + board[colIdx - 3][rowIdx + 3])=== 4) {
+                                                    return board[colIdx][rowIdx];
+                                                } else {
+                                                    return null;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                        }
+                    }
+                }
+        }
+    }
+
+
+
+
 function checkForWin() {
-    if (totalTurns >= 42) { return winner = "T" };
+    if (totalTurns === 42) return winner = "T";
     for (let colIdx = 0; colIdx <= 6; colIdx++) {
         winner = checkCol(colIdx);
         if (winner) break;
@@ -100,35 +164,6 @@ function checkCol(colIdx) {
         if (winner) return winner;
     }
     return null;
-}
-
-function checkDiag(colIdx, rowIdx, dir) {
-    if (dir > 0 && colIdx > 3 || dir > 0 && rowIdx > 2) return null;
-    if (dir < 0 && colIdx > 3 || dir < 0 && rowIdx < 3) return null;
-    if (Math.abs(board[colIdx][rowIdx] + board[colIdx + 1][rowIdx + dir] + board[colIdx + 2][rowIdx + dir * 2] + board[colIdx + 3][rowIdx + dir * 3]) === 4) {
-        return board[colIdx][rowIdx];
-    } else {
-        return null;
-    }
-}
-
-function checkHori(colIdx, rowIdx) {
-    if (colIdx > 3) return null;
-    if (Math.abs(board[colIdx][rowIdx] + board[colIdx + 1][rowIdx] + board[colIdx + 2][rowIdx] + board[colIdx + 3][rowIdx]) === 4) {
-        return board[colIdx][rowIdx];
-    } else {
-        return null;
-    }
-}
-
-
-function checkVert(colArr, rowIdx) {
-    if (rowIdx > 2) return null;
-    if (Math.abs(colArr[rowIdx] + colArr[rowIdx + 1] + colArr[rowIdx + 2] + colArr[rowIdx + 3]) === 4) {
-        return colArr[rowIdx];
-    } else {
-        return null;
-    }
 }
 
 function resetGame() {
