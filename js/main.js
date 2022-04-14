@@ -112,37 +112,42 @@ function checkVert(colArr, rowIdx) {
 // }
 
 function checkDiag(colIdx, rowIdx) {
-    for (var rowIdx = 0; rowIdx < 3; rowIdx++) {
-        for (var colIdx = 0; colIdx < 4; colIdx++) {
-            if (Math.abs(board[colIdx][rowIdx] + board[colIdx + 1][rowIdx + 1] + board[colIdx + 2][rowIdx + 2] + board[colIdx + 3][rowIdx + 3])===4) {
-                return board[colIdx][rowIdx];
-            } else {
-                for (var rowIdx = 5; rowIdx > 2; rowIdx--) {
-                    for (var colIdx = 6; colIdx > 2; colIdx--) {            
-                        } if (Math.abs(board[colIdx][rowIdx] + board[colIdx - 1][rowIdx - 1] + board[colIdx - 2][rowIdx - 2] + board[colIdx - 3][rowIdx - 3])=== 4) {
-                            return board[colIdx][rowIdx];   
-                        } else {
-                            for (var rowIdx = 5; rowIdx > 2; rowIdx--) {
-                                for (var colIdx = 0; colIdx < 4; colIdx++) {
-                                    } if (Math.abs(board[colIdx][rowIdx] + board[colIdx + 1][rowIdx - 1] + board[colIdx + 2][rowIdx - 2] + board[colIdx + 3][rowIdx - 3])=== 4) {   
-                                        return board[colIdx][rowIdx];   
-                                    } else {
-                                        for (var rowIdx = 0; rowIdx < 3; rowIdx++) {
-                                            for (var colIdx = 6; colIdx > 2; colIdx--) {
-                                                } if (Math.abs(board[colIdx][rowIdx] + board[colIdx - 1][rowIdx + 1] + board[colIdx - 2][rowIdx + 2] + board[colIdx - 3][rowIdx + 3])=== 4) {
-                                                    return board[colIdx][rowIdx];
-                                                } else {
-                                                    return null;
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                        }
-                    }
+    if (true) {
+        for (var rowIdx = 0; rowIdx < 3; rowIdx++) {
+            for (var colIdx = 0; colIdx < 4; colIdx++) {
+                if (Math.abs(board[colIdx][rowIdx] + board[colIdx + 1][rowIdx + 1] + board[colIdx + 2][rowIdx + 2] + board[colIdx + 3][rowIdx + 3])===4) {
+                    return board[colIdx][rowIdx];
                 }
+            }
+        }    
+    } if (true) {
+        for (var rowIdx = 5; rowIdx > 2; rowIdx--) {
+            for (var colIdx = 6; colIdx > 2; colIdx--) {            
+                if (Math.abs(board[colIdx][rowIdx] + board[colIdx - 1][rowIdx - 1] + board[colIdx - 2][rowIdx - 2] + board[colIdx - 3][rowIdx - 3])=== 4) {
+                    return board[colIdx][rowIdx];
+                }
+            }
+        }    
+    } if (true) {
+        for (var rowIdx = 5; rowIdx > 2; rowIdx--) {
+            for (var colIdx = 0; colIdx < 4; colIdx++) {
+                if (Math.abs(board[colIdx][rowIdx] + board[colIdx + 1][rowIdx - 1] + board[colIdx + 2][rowIdx - 2] + board[colIdx + 3][rowIdx - 3])=== 4) {   
+                    return board[colIdx][rowIdx]; 
+                }
+            }
         }
+    } if (true) {
+        for (var rowIdx = 0; rowIdx < 3; rowIdx++) {
+            for (var colIdx = 6; colIdx > 2; colIdx--) {
+                if (Math.abs(board[colIdx][rowIdx] + board[colIdx - 1][rowIdx + 1] + board[colIdx - 2][rowIdx + 2] + board[colIdx - 3][rowIdx + 3])=== 4) {
+                    return board[colIdx][rowIdx];
+                }
+            }
+        }
+    } {
+        return null;
     }
+}
 
 
 
