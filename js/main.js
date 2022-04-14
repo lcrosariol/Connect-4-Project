@@ -101,16 +101,6 @@ function checkVert(colArr, rowIdx) {
     }
 }
 
-// function checkDiag(colIdx, rowIdx, x) {
-//     if (x > 0 && colIdx > 3 || x > 0 && rowIdx > 2) return null;
-//     if (x < 0 && colIdx > 3 || x < 0 && rowIdx < 3) return null;
-//     if (Math.abs(board[colIdx][rowIdx] + board[colIdx + 1][rowIdx + x] + board[colIdx + 2][rowIdx + x * 2] + board[colIdx + 3][rowIdx + x * 3]) === 4) {
-//         return board[colIdx][rowIdx];
-//     } else {
-//         return null;
-//     }
-// }
-
 function checkDiag(colIdx, rowIdx) {
     if (true) {
         for (var rowIdx = 0; rowIdx < 3; rowIdx++) {
@@ -148,9 +138,6 @@ function checkDiag(colIdx, rowIdx) {
         return null;
     }
 }
-
-
-
 
 function checkForWin() {
     if (totalTurns === 42) return winner = "T";

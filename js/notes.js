@@ -83,28 +83,26 @@
 
 
 
-// Function checkHori( takes colIdx and rowIdx as parameters)
-// If colIdx (index of the button that is clicked on) is greater than 3, return null or nothing (because we will not have more than 4).
-// If the absolute value of (the player value on the board(of the coordinates of columns and rows) equals 4 (because it is connect 4).  The absolute value makes it comparable to 4,
-//      because a win to either player will be 4 or -4.
-// Return the rowIdx and colIdx of the board. 
-// Return null 
+//Function checkHoriz
+
+
+
+
+
 
 
 
 // Function checkVert( takes colArr and rowIdx as parameters)
 // If the colIdx is greater than 2, return null because you cannot have a connect 4.
-// 
-
-
 // We return the colArr (which is equal to the index of the button clicked in it's index on the board) and rowIdx (which is the index of colArr)
 
-// Function checkCol
-// Declares a constant colArr which is equal to the index of the button clicked in it's index on the board.
-// For loop that loops through rowIdx (which is the index of colArr(the index of the column of the button clicked on)), we start at index 0 and increment by one each loop until
-// we reach the length of colArr(index number of the column clicked on).
 
 
+
+
+
+// Function checkDiag( takes colIdx and rowIdx as parameters)
+// Devides the board into 4 sections with 8 for loops.  Then tests for hoizontal wins in 4 directions.
 
 
 
@@ -150,3 +148,14 @@
 
 
 
+// Function checkCol
+// Declares a constant colArr which is equal to the index of the button clicked in it's index on the board.
+// For loop that loops through rowIdx (which is the index of colArr(the index of the column of the button clicked on)), we start at index 0 and increment by one each loop until
+// we reach the length of colArr(index number of the column clicked on).
+
+
+
+
+
+
+// Function resetGame
