@@ -9,11 +9,11 @@ body {
 h1 {
     text-align: center;
     font-family: 'Monoton', cursive;
-    font-size: 10vmin;
+    font-size: 6vw;
     animation: gradient 30s ease infinite;
     background-image: linear-gradient(-225deg,
             rgb(11, 109, 11) 0%,
-            rgb(9, 12, 187) 29%,
+            #0a07c2, 29%,
             rgb(16, 116, 16) 67%,
             rgb(4, 97, 43) 100%);
     background-size: auto auto;
@@ -30,53 +30,19 @@ h1 {
 
 h3 {
     font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.6vw;
     text-align: center;
     margin: 0;
     padding: 0;
 }
 
 h2 {
-    font-family: 'Plus Jakarta Sans',
-    sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 2vw;
     text-align: center;
     margin: 0;
     padding: 0;
 }
-
-#displayMessage {
-    text-align: center;
-    font-size: 2vmin;
-}
-    /* animation: 2s anim-popoutin ease infinite; //WORKS BUT IS KIND OF ANNOYING 
-} 
-
-@keyframes anim-popoutin {                      //WORKS BUT IS KIND OF ANNOYING
-    0% {
-        color: rgb(85, 20, 82);
-        transform: scale(0);
-        opacity: 0;
-        text-shadow: 0 0 0 rgba(0, 0, 0, 0);
-    }
-        25% {
-        color: rgb(238, 38, 211);
-        transform: scale(2);
-        opacity: 1;
-        text-shadow: 3px 10px 5px rgba(0, 0, 0, 0.5);
-    }
-    50% {
-        color: rgb(85, 20, 82);
-        transform: scale(1);
-        opacity: 1;
-        text-shadow: 1px 0 0 rgba(0, 0, 0, 0);
-    }
-    100% {
-    animate nothing to add pause at the end of animation 
-        transform: scale(1);
-        opacity: 1;
-        text-shadow: 1px 0 0 rgba(0, 0, 0, 0);
-    }
-}  */
-
 
 #bg-player {
     margin-top: 2vmin;
@@ -90,15 +56,16 @@ h2 {
 }
 
 .top {
-    margin-bottom: 2vmin;
+    margin-bottom: 4vmin;
     border: none;
     height: 8vmin;
     width: 8vmin;
-    gap: 2vmin;
-    margin-left: 1.3vmin;
+    /* gap: 3vmin; */
+    margin-left: 1.2vmin;
     margin-right: 1.3vmin;
+
     background-color: #838282;
-    font-size: 40px;
+    font-size: 8vmin;
 }
 
 .top:hover {
@@ -115,9 +82,9 @@ h2 {
     width: 80vmin;
     justify-content: space-evenly;
     border-radius: 5px;
-    border: 5px solid black;
+    border: 5px solid #1B1B1B;
     animation: gradient 30s ease infinite;
-    background: linear-gradient(45deg, rgb(11, 109, 11), rgb(16, 116, 16), rgb(9, 12, 187), rgb(4, 97, 43));
+    background: linear-gradient(45deg, rgb(11, 109, 11), rgb(16, 116, 16), #2AA7FF, #0a07c2, rgb(4, 97, 43));
     background-size: 400% 400%;
 }
 
@@ -148,27 +115,29 @@ h2 {
 
 #resetGame {
     font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 2vmin;
     color:#a09f9f;
     height: 5vmin;
     width: 18vmin;
     margin-top: 2vmin;
-    border: 5px solid black;
+    border: 5px solid #1B1B1B;
     border-radius: 5px;
     animation: gradient 30s ease infinite;
-    background: linear-gradient(45deg, rgb(11, 109, 11), rgb(9, 12, 187), rgb(16, 116, 16), rgb(4, 97, 43));
+    background: linear-gradient(45deg, rgb(11, 109, 11), #2AA7FF, #0a07c2, rgb(16, 116, 16), rgb(4, 97, 43));
     background-size: 400% 400%;
 }
 
 #last {
     font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 2vmin;
     height: 5vmin;
     width: 18vmin;
     justify-content: right;
     margin-top: 2vmin;
-    border: 5px solid black;
+    border: 5px solid #1B1B1B;
     border-radius: 5px;
     animation: gradient 30s ease infinite;
-    background: linear-gradient(45deg, rgb(11, 109, 11), rgb(9, 12, 187), rgb(16, 116, 16), rgb(4, 97, 43));
+    background: linear-gradient(45deg, rgb(11, 109, 11), #2AA7FF, #0a07c2, rgb(16, 116, 16), rgb(4, 97, 43));
     background-size: 400% 400%;
 }
 
@@ -188,12 +157,14 @@ a:active {
     color: red;
 }
 
-.red {
-
-}
-
-.yellow {
-    
+#id {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    text-align: center;
+    /* height: 5vmin;
+    width: 5vmin;
+    border: 3vmin solid #1B1B1B;
+    border-radius: 0%; */
+    /* font-size: 3vmin;    THIS IS BEING CONTROLLED BY THE #GAMEBOARD>DIV NOT SURE WHY*/
 }
 
 /** Code snippet from Nash Vail https://codepen.io/nashvail/pen/wpGgXO **/
