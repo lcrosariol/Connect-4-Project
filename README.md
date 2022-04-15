@@ -5,15 +5,21 @@
 ##### Future improvements include inplementing AI and/or difficulty levels. 
 ### [PLAY GAME HERE](https://connectcuatro.netlify.app/)
 ![Screenshot](https://i.imgur.com/JTx3wqL.jpg)
+![Game Gif](/%E2%8F%BA%20Connect%20Four%20%E2%8F%BA%20(1).gif)
 
 
 
 
 
+### Project wireframes:
+[Wireframe1](https://whimsical.com/embed/WSYfnEKfkCqCUBjKKqf1dh)
+[Wireframe2](https://whimsical.com/wireframe-2NPxk3hptj1dAusEGexVzM)
 
+### Project Trello:
+[Trello](https://trello.com/b/Ie7W4qAv/connect-four)
 
-
-
+### Pseudocode:
+[Pseudocode](https://github.com/lcrosariol/Connect-4-Project/blob/83d1f322af2b0560ddaaa2f3047541b441bbec6f/js/main.js)
 ##### References:
 ###### Sounds from [freesound.org](freesound.org)
 ###### General Assembly [GA examples.](https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwj2r6XOtZb3AhUQwsIEHZGZDdQYABABGgJwdg&ae=2&ohost=www.google.com&cid=CAESa-D2yXziB46OSoUwCHKPBbzsRmdWJJmvSD3EdwXgNI0vnMC4-gXSmFimjUl3XcxfyBfVRX0RlzcR6hdYeP_LFq-hrasNTgMpgYHO1G-wU3ddyIWW-JZk9lTDYwewA7HsgP8Qp5nxomIr_5by&sig=AOD64_2vBw8CsfxrXyd1OHDMYehfcs8V9Q&q&adurl&ved=2ahUKEwiQ3ZbOtZb3AhUUEEQIHZKdBBkQ0Qx6BAgEEAE)
