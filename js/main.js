@@ -180,8 +180,8 @@ function resetGame() {
 }
 
 /** Sounds from freesound.org */
-/** Some code used from GA examples: https://github.com/jhotz2112/Connect_Four/blob/main/js/script.js 
- * & https://github.com/countchrisdo/connect-four **/
+
+/** Some code used from GA examples. **/
 
 /** Background Code snippet from Nash Vail https://codepen.io/nashvail/pen/wpGgXO **/
 // Some random colors
