@@ -43,7 +43,7 @@ h2 {
 
 #bg-player {
     margin-top: 2vmin;
-    width: 20vmin;
+    width: 50vmin;
 }
 
 
@@ -112,7 +112,6 @@ h2 {
     color:#3a2525;
     height: 5vmin;
     width: 18vmin;
-    margin-top: 2vmin;
     border: 5px solid #1B1B1B;
     border-radius: 5px;
     animation: gradient 30s ease infinite;
@@ -126,7 +125,7 @@ h2 {
     height: 5vmin;
     width: 18vmin;
     justify-content: right;
-    margin-top: 2vmin;
+    margin-left: 2vmin;
     border: 5px solid #1B1B1B;
     border-radius: 5px;
     animation: gradient 30s ease infinite;
@@ -155,11 +154,28 @@ a:active {
     flex-wrap: wrap;
     font-family: 'Plus Jakarta Sans', sans-serif;
     text-align: center;
-    margin 0 auto;
+    margin: 0 auto;
     color: #1B1B1B;
-    height: 5vmin;
-    width: 21vmin;
+    height: 7vmin;
+    width: 40vmin;
     font-size: 2vmin;    
+}
+
+.bottom {
+    display: flex;
+    flex-wrap:wrap;
+    margin-top: 3vmin;
+    margin-bottom: 0;
+}
+
+span {
+    margin-top: 1vmin;
+    margin-left: 1vmin;
+    margin: 1vmin;
+}
+
+p {
+    margin: 1vmin;
 }
 
 /** Code snippet from Nash Vail https://codepen.io/nashvail/pen/wpGgXO **/
