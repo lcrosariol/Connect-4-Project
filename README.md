@@ -15,6 +15,7 @@
 
 
 ##### References:
-###### Sounds from freesound.org
-###### Some code used from GA examples.
+###### Sounds from [freesound.org](freesound.org)
+###### General Assembly [GA examples.](https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwj2r6XOtZb3AhUQwsIEHZGZDdQYABABGgJwdg&ae=2&ohost=www.google.com&cid=CAESa-D2yXziB46OSoUwCHKPBbzsRmdWJJmvSD3EdwXgNI0vnMC4-gXSmFimjUl3XcxfyBfVRX0RlzcR6hdYeP_LFq-hrasNTgMpgYHO1G-wU3ddyIWW-JZk9lTDYwewA7HsgP8Qp5nxomIr_5by&sig=AOD64_2vBw8CsfxrXyd1OHDMYehfcs8V9Q&q&adurl&ved=2ahUKEwiQ3ZbOtZb3AhUUEEQIHZKdBBkQ0Qx6BAgEEAE)
 ###### Background Code snippet from [Nash Vail.](https://codepen.io/nashvail/pen/wpGgXO)
+##### [City of Rancho Cordova](https://www.cityofranchocordova.org/)
