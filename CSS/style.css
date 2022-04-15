@@ -16,13 +16,10 @@ h1 {
             #0a07c2, 29%,
             rgb(16, 116, 16) 67%,
             rgb(4, 97, 43) 100%);
-    background-size: auto auto;
-    background-clip: border-box;
-    background-size: 200% auto;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    display: inline-block;
+
     background-size: 400% 400%;
     margin: 0;
     padding: 0;
@@ -60,17 +57,14 @@ h2 {
     border: none;
     height: 8vmin;
     width: 8vmin;
-    /* gap: 3vmin; */
     margin-left: 1.2vmin;
     margin-right: 1.3vmin;
-
     background-color: #838282;
     font-size: 8vmin;
 }
 
 .top:hover {
     opacity: 0.0;
-
 }
 
 #gameBoard {
@@ -102,7 +96,6 @@ h2 {
     }
 }
 
-
 #gameBoard>div {
     display: grid;
     margin-top: .8vmin;
@@ -116,7 +109,7 @@ h2 {
 #resetGame {
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 2vmin;
-    color:#a09f9f;
+    color:#3a2525;
     height: 5vmin;
     width: 18vmin;
     margin-top: 2vmin;
@@ -142,11 +135,11 @@ h2 {
 }
 
 a:link {
-    color: #a09f9f;
+    color: #3a2525;
 }
 
 a:visited {
-    color: #a09f9f;
+    color: #3a2525;
 }
 
 a:hover {
@@ -157,14 +150,16 @@ a:active {
     color: red;
 }
 
-#id {
+#scoreboard {
+    display: flex;
+    flex-wrap: wrap;
     font-family: 'Plus Jakarta Sans', sans-serif;
     text-align: center;
-    /* height: 5vmin;
-    width: 5vmin;
-    border: 3vmin solid #1B1B1B;
-    border-radius: 0%; */
-    /* font-size: 3vmin;    THIS IS BEING CONTROLLED BY THE #GAMEBOARD>DIV NOT SURE WHY*/
+    margin 0 auto;
+    color: #1B1B1B;
+    height: 5vmin;
+    width: 21vmin;
+    font-size: 2vmin;    
 }
 
 /** Code snippet from Nash Vail https://codepen.io/nashvail/pen/wpGgXO **/

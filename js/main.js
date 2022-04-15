@@ -117,32 +117,32 @@ function checkVert(colArr, rowIdx) {
 
 function checkDiag(colIdx, rowIdx) {
     if (true) {
-        for (var rowIdx = 0; rowIdx < 3; rowIdx++) {
-            for (var colIdx = 0; colIdx < 4; colIdx++) {
+        for (let rowIdx = 0; rowIdx < 3; rowIdx++) {
+            for (let colIdx = 0; colIdx < 4; colIdx++) {
                 if (Math.abs(board[colIdx][rowIdx] + board[colIdx + 1][rowIdx + 1] + board[colIdx + 2][rowIdx + 2] + board[colIdx + 3][rowIdx + 3])===4) {
                     return board[colIdx][rowIdx];
                 }
             }
         }    
     } if (true) {
-        for (var rowIdx = 5; rowIdx > 2; rowIdx--) {
-            for (var colIdx = 6; colIdx > 2; colIdx--) {            
+        for (let rowIdx = 5; rowIdx > 2; rowIdx--) {
+            for (let colIdx = 6; colIdx > 2; colIdx--) {            
                 if (Math.abs(board[colIdx][rowIdx] + board[colIdx - 1][rowIdx - 1] + board[colIdx - 2][rowIdx - 2] + board[colIdx - 3][rowIdx - 3])=== 4) {
                     return board[colIdx][rowIdx];
                 }
             }
         }    
     } if (true) {
-        for (var rowIdx = 5; rowIdx > 2; rowIdx--) {
-            for (var colIdx = 0; colIdx < 4; colIdx++) {
+        for (let rowIdx = 5; rowIdx > 2; rowIdx--) {
+            for (let colIdx = 0; colIdx < 4; colIdx++) {
                 if (Math.abs(board[colIdx][rowIdx] + board[colIdx + 1][rowIdx - 1] + board[colIdx + 2][rowIdx - 2] + board[colIdx + 3][rowIdx - 3])=== 4) {   
                     return board[colIdx][rowIdx]; 
                 }
             }
         }
     } if (true) {
-        for (var rowIdx = 0; rowIdx < 3; rowIdx++) {
-            for (var colIdx = 6; colIdx > 2; colIdx--) {
+        for (let rowIdx = 0; rowIdx < 3; rowIdx++) {
+            for (let colIdx = 6; colIdx > 2; colIdx--) {
                 if (Math.abs(board[colIdx][rowIdx] + board[colIdx - 1][rowIdx + 1] + board[colIdx - 2][rowIdx + 2] + board[colIdx - 3][rowIdx + 3])=== 4) {
                     return board[colIdx][rowIdx];
                 }
@@ -179,6 +179,7 @@ function resetGame() {
     }
 }
 
+/** Sounds from freesound.org */
 /** Some code used from GA examples: https://github.com/jhotz2112/Connect_Four/blob/main/js/script.js 
  * & https://github.com/countchrisdo/connect-four **/
 

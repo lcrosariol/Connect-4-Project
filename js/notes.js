@@ -51,6 +51,9 @@
 //   The winner is set to null, which means nothing.
 
 
+
+
+
 //   Renders the HTML to the browser.
 //   Iterates over each column in the constant board one time.  The parameters are column (element) and columnIndex (index).
 //   Iterates over each cell in the constant board one time.  The parameters are cell (element) and cellIndex (index).
@@ -65,7 +68,7 @@
 
 //   When a player takes a turn, the event checks the index of the cell on the column...
 //   Declaring a constant colIdx, which is the index of the button that is clicked on (evt). .indexOf returns the first index at which a given element can be found in the array, or -1 if it is not present.
-//          So in other words if you can't click on it it will return -1. // If the board is full or we have a winner, return false.
+//   So in other words if you can't click on it it will return -1. // If the board is full or we have a winner, return false.
 //   Declaring a constant colArr, which is the index of the column of the button clicked on.
 //   Declaring a constant rowIdx, which is the index of colArr(the index of the column of the button clicked on) at index 0(row starting at 0(bottom)).
 //   IndexOf returns -1 if outside the array.  So if it is -1 return false.
@@ -114,7 +117,6 @@
 
 // Function checkDiag( takes colIdx and rowIdx as parameters)
 // Devides the board into 4 sections with 8 for loops.  Then tests for hoizontal wins in 4 directions.
-
 
 
 

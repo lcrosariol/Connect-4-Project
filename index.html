@@ -25,7 +25,7 @@
         <button class="top">&#128071;</button>
         <button class="top">&#128071;</button>
     </div>
-    <section id="gameBoard">
+    <section class="board" id="gameBoard">
         <div id="c0r5"></div>
         <div id="c1r5"></div>
         <div id="c2r5"></div>
@@ -73,14 +73,19 @@
         <div id="c4r0"></div>
         <div id="c5r0"></div>
         <div id="c6r0"></div>
-    <div id="scoreboard">
-        <span class="red">0</span>:<span class="yellow">0</span>
-    </div>
-        <button id="resetGame">Reset Game?</button>
     </section>
+    <div id="scoreboard">
+        <p>Score:</p>
+        <div>Red</div>
+        <span class="red">0</span>:<span class="yellow">0</span>
+        <div>Yellow</div>
+    </div>
+    <button id="resetGame">Reset Game?</button>
     <button id="last">
-        <a href="https://www.hasbro.com/common/documents/dad2614d1c4311ddbd0b0800200c9a66/1EF6874419B9F36910222EB9858E8CB8.pdf" target=”_blank>Instructions</a></button>
-    <div> <audio id="bg-player" controls src="/audio/627031__josefpres__bass-loops-038-with-drums-long-loop-120-bpm (1).wav" loop></audio>
+        <a href="https://www.hasbro.com/common/documents/dad2614d1c4311ddbd0b0800200c9a66/1EF6874419B9F36910222EB9858E8CB8.pdf" target=”_blank>Instructions</a>
+    </button>
+    <div> 
+        <audio id="bg-player" controls src="/audio/627031__josefpres__bass-loops-038-with-drums-long-loop-120-bpm (1).wav" loop></audio>
     </div>
     <audio src="/audio/261409__veiler__kick-bass-win.wav" id="drum"></audio>
     <audio src="/audio/391539__mativve__electro-win-sound.wav" id="winner"></audio>
