@@ -24,14 +24,6 @@ h1 {
     padding: 0;
 }
 
-h3 {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 1.2vw;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-}
-
 h2 {
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 1.6vw;
@@ -40,15 +32,38 @@ h2 {
     padding: 0;
 }
 
-#bg-player {
-    margin-top: 2vmin;
-    width: 50vmin;
+h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.2vw;
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
+span {
+    margin-top: 1vmin;
+    margin-left: 1vmin;
+    margin: 1vmin;
+}
 
-#topButtons {
-    grid-template-rows: 10vmin;
-    grid-template-columns: repeat(7, 10vmin);
+p {
+    margin: 1vmin;
+}
+
+a:link {
+    color: #3a2525;
+}
+
+a:visited {
+    color: #3a2525;
+}
+
+a:hover {
+    color: hotpink;
+}
+
+a:active {
+    color: red;
 }
 
 .top {
@@ -64,6 +79,80 @@ h2 {
 
 .top:hover {
     opacity: 0.0;
+}
+
+.bottom {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 3vmin;
+    margin-bottom: 0;
+}
+
+/** Code snippet from Nash Vail https://codepen.io/nashvail/pen/wpGgXO **/
+.ball {
+    position: absolute;
+    border-radius: 100%;
+    opacity: 0.7;
+    z-index: -2;
+}
+
+/** Code snippet from Nash Vail https://codepen.io/nashvail/pen/wpGgXO **/
+
+#scoreboard {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    text-align: center;
+    margin: 0 auto;
+    color: #1B1B1B;
+    height: 7vmin;
+    width: 40vmin;
+    font-size: 2.3vmin;
+}
+
+#bg-player {
+    margin-top: 2vmin;
+    width: 50vmin;
+}
+
+#topButtons {
+    grid-template-rows: 10vmin;
+    grid-template-columns: repeat(7, 10vmin);
+}
+
+#resetGame {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 2vmin;
+    color:#3a2525;
+    height: 5vmin;
+    width: 18vmin;
+    border: 5px solid #1B1B1B;
+    border-radius: 5px;
+    animation: gradient 30s ease infinite;
+    background: linear-gradient(45deg, rgb(11, 109, 11), #2AA7FF, #0a07c2, rgb(16, 116, 16), rgb(4, 97, 43));
+    background-size: 400% 400%;
+}
+
+#last {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 2vmin;
+    height: 5vmin;
+    width: 18vmin;
+    margin-left: 2vmin;
+    border: 5px solid #1B1B1B;
+    border-radius: 5px;
+    animation: gradient 30s ease infinite;
+    background: linear-gradient(45deg, rgb(11, 109, 11), #2AA7FF, #0a07c2, rgb(16, 116, 16), rgb(4, 97, 43));
+    background-size: 400% 400%;
+}
+
+#gameBoard>div {
+    display: grid;
+    margin-top: .8vmin;
+    border-radius: 50%;
+    border: .4vmin solid rgb(46, 46, 46);
+    height: 8vmin;
+    width: 9vmin;
 }
 
 #gameBoard {
@@ -94,93 +183,3 @@ h2 {
         background-position: 0% 50%;
     }
 }
-
-#gameBoard>div {
-    display: grid;
-    margin-top: .8vmin;
-    border-radius: 50%;
-    border: .4vmin solid rgb(46, 46, 46);
-    height: 8vmin;
-    width: 9vmin;
-}
-
-#resetGame {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 2vmin;
-    color:#3a2525;
-    height: 5vmin;
-    width: 18vmin;
-    border: 5px solid #1B1B1B;
-    border-radius: 5px;
-    animation: gradient 30s ease infinite;
-    background: linear-gradient(45deg, rgb(11, 109, 11), #2AA7FF, #0a07c2, rgb(16, 116, 16), rgb(4, 97, 43));
-    background-size: 400% 400%;
-}
-
-#last {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 2vmin;
-    height: 5vmin;
-    width: 18vmin;
-    margin-left: 2vmin;
-    border: 5px solid #1B1B1B;
-    border-radius: 5px;
-    animation: gradient 30s ease infinite;
-    background: linear-gradient(45deg, rgb(11, 109, 11), #2AA7FF, #0a07c2, rgb(16, 116, 16), rgb(4, 97, 43));
-    background-size: 400% 400%;
-}
-
-a:link {
-    color: #3a2525;
-}
-
-a:visited {
-    color: #3a2525;
-}
-
-a:hover {
-    color: hotpink;
-}
-
-a:active {
-    color: red;
-}
-
-#scoreboard {
-    display: flex;
-    flex-wrap: wrap;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    text-align: center;
-    margin: 0 auto;
-    color: #1B1B1B;
-    height: 7vmin;
-    width: 40vmin;
-    font-size: 2.3vmin;    
-}
-
-.bottom {
-    display: flex;
-    flex-wrap:wrap;
-    margin-top: 3vmin;
-    margin-bottom: 0;
-}
-
-span {
-    margin-top: 1vmin;
-    margin-left: 1vmin;
-    margin: 1vmin;
-}
-
-p {
-    margin: 1vmin;
-}
-
-/** Code snippet from Nash Vail https://codepen.io/nashvail/pen/wpGgXO **/
-.ball {
-    position: absolute;
-    border-radius: 100%;
-    opacity: 0.7;
-    z-index: -2;
-}
-
-/** Code snippet from Nash Vail https://codepen.io/nashvail/pen/wpGgXO **/
